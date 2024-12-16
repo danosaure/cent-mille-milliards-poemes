@@ -1,0 +1,17 @@
+.cursive {
+  font-family: cursive;
+}
+
+h1 {
+  color: red;
+}
+
+.sonnet {
+  color: green;
+
+  div:nth-child(13n + 5),
+  div:nth-child(13n + 9),
+  div:nth-child(13n + 12) {
+    padding-top: 1em;
+  }
+}
