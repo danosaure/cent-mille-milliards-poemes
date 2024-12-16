@@ -1,8 +1,9 @@
 import { VERSES } from '../verses';
+import { getRandomNumber } from '../utils/get-random-number';
 import * as styles from '../styles/App.module.scss';
 
 const App = () => {
-  const indices: number[] = VERSES.map((_, i) => Math.floor(Math.random() * VERSES[i].length));
+  const indices: number[] = VERSES.map((_, i) => getRandomNumber(VERSES[i].length));
   const verses: string[] = VERSES.map((verseLines, i) => VERSES[i][indices[i]]);
   const sonnetNumber: number = VERSES.reduce((nb, _, i) => {
     return nb + indices[i] * Math.pow(10, i);
