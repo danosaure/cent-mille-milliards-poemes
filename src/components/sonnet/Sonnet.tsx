@@ -1,26 +1,23 @@
+import Typography from '@mui/material/Typography';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+
+import type { SonnetProps } from './SonnetProps';
+
 import * as styles from './Sonnet.module.scss';
-
-import type { verseItemType } from '../../types/verse-item-type';
-
-type SonnetProps = {
-  sonnetNumber: number;
-  verses: verseItemType[];
-};
 
 const Sonnet = ({ sonnetNumber, verses }: SonnetProps) => {
   return (
     <>
-      <p>Sonnet #{sonnetNumber}</p>
+      <Typography variant="body1">Sonnet #{sonnetNumber}</Typography>
       <div className={styles.sonnet}>
         {verses.map((verse, i) => (
           <div key={i} className={styles.verse}>
-            <div className={styles.navigation}>
-              <button onClick={verse.handleLeft}>&lt;</button>
-            </div>
-            <div className={styles.text}>{verse.text}</div>
-            <div className={styles.navigation}>
-              <button onClick={verse.handleRight}>&gt;</button>
-            </div>
+            <ArrowCircleLeftIcon fontSize="small" onClick={verse.handleLeft} />
+            <ArrowCircleRightIcon fontSize="small" onClick={verse.handleRight} />
+            <Typography variant="body2" className={styles.text}>
+              {verse.text}
+            </Typography>
           </div>
         ))}
       </div>
