@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 import { VERSES } from '../verses';
 import { getRandomNumber } from '../utils/get-random-number';
@@ -18,12 +20,10 @@ const App = () => {
     return nb + indices[i] * Math.pow(10, i);
   }, 1);
   return (
-    <div className={`${styles.main} center`}>
-      <h1>Cent Mille Milliards de Poèmes</h1>
-      <div className="poeme">
-        <Sonnet sonnetNumber={sonnetNumber} verses={verses} />
-      </div>
-    </div>
+    <Stack direction="column" spacing={2}>
+      <Typography variant="h1">Cent Mille Milliards de Poèmes</Typography>
+      <Sonnet sonnetNumber={sonnetNumber} verses={verses} />
+    </Stack>
   );
 };
 
