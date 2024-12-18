@@ -3,12 +3,16 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 import type { SonnetProps } from './SonnetProps';
+import { RandomButton } from '../random-button/RandomButton';
 
 import * as styles from './Sonnet.module.scss';
 
-const Sonnet = ({ sonnetNumber, verses }: SonnetProps) => {
+export const Sonnet = ({ sonnetNumber, verses, randomize }: SonnetProps) => {
   return (
     <>
+      <span className="non-printable">
+        <RandomButton onClick={randomize} />
+      </span>
       <Typography variant="body1">Sonnet #{sonnetNumber}</Typography>
       <div className={styles.sonnet}>
         {verses.map((verse, i) => (
@@ -26,6 +30,3 @@ const Sonnet = ({ sonnetNumber, verses }: SonnetProps) => {
     </>
   );
 };
-
-export { Sonnet };
-export type { SonnetProps };

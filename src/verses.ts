@@ -1,4 +1,4 @@
-const VERSES: ReadonlyArray<string[]> = [
+const VERSES: string[][] = [
   [
     // verse 1
     'Le roi de la pampa retourne sa chemise',

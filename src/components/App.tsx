@@ -4,12 +4,12 @@ import Typography from '@mui/material/Typography';
 
 import { VERSES } from '../verses';
 import { getRandomNumber } from '../utils/get-random-number';
+import { randomizeIndices } from '../utils/randomize-indices';
 import { Sonnet } from './sonnet/Sonnet';
 import type { verseItemType } from '../types/VerseItemType';
-import * as styles from './App.module.scss';
 
-const App = () => {
-  const [indices, setIndices] = useState<number[]>(VERSES.map((_, i) => getRandomNumber(VERSES[i].length)));
+export const App = () => {
+  const [indices, setIndices] = useState<number[]>(randomizeIndices(VERSES));
 
   const verses: verseItemType[] = VERSES.map((verseLines, i) => ({
     text: VERSES[i][indices[i]],
@@ -20,12 +20,12 @@ const App = () => {
     return nb + indices[i] * Math.pow(10, i);
   }, 1);
 
+  const randomize = () => setIndices(randomizeIndices(VERSES));
+
   return (
     <Stack direction="column" spacing={2}>
       <Typography variant="h1">Cent Mille Milliards de Poèmes</Typography>
-      <Sonnet sonnetNumber={sonnetNumber} verses={verses} />
+      <Sonnet sonnetNumber={sonnetNumber} verses={verses} randomize={randomize} />
     </Stack>
   );
 };
-
-export { App };
