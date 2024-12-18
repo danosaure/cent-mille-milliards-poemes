@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+.non-printable {
+  @media print {
+    display: none;
+  }
+}
+
 button {
   height: 50px;
   width: 200px;
@@ -19,5 +25,4 @@ img {
 }
 
 h1 {
-  color: red;
 }

@@ -1,5 +1,4 @@
 .sonnet {
-  color: green;
   width: 100%;
 
   .verse {
@@ -13,19 +12,12 @@
     justify-content: space-between;
 
     .navigation {
-      button {
-        height: 1.5em;
-        width: 1.5em;
-        font-size: xx-small;
-        margin: 0;
-      }
+      padding-right: 1em;
     }
 
     .text {
       flex-grow: 1;
       text-align: left;
-      padding-left: 1em;
-      padding-right: 1em;
     }
   }
 }

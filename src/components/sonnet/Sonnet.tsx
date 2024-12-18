@@ -13,8 +13,10 @@ const Sonnet = ({ sonnetNumber, verses }: SonnetProps) => {
       <div className={styles.sonnet}>
         {verses.map((verse, i) => (
           <div key={i} className={styles.verse}>
-            <ArrowCircleLeftIcon fontSize="small" onClick={verse.handleLeft} />
-            <ArrowCircleRightIcon fontSize="small" onClick={verse.handleRight} />
+            <span className={`non-printable ${styles.navigation}`}>
+              <ArrowCircleLeftIcon fontSize="small" onClick={verse.handleLeft} />
+              <ArrowCircleRightIcon fontSize="small" onClick={verse.handleRight} />
+            </span>
             <Typography variant="body2" className={styles.text}>
               {verse.text}
             </Typography>

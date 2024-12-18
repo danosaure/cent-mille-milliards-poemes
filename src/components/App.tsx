@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { VERSES } from '../verses';
 import { getRandomNumber } from '../utils/get-random-number';
 import { Sonnet } from './sonnet/Sonnet';
-import type { verseItemType } from '../types/verse-item-type';
+import type { verseItemType } from '../types/VerseItemType';
 import * as styles from './App.module.scss';
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
   const sonnetNumber: number = VERSES.reduce((nb, _, i) => {
     return nb + indices[i] * Math.pow(10, i);
   }, 1);
+
   return (
     <Stack direction="column" spacing={2}>
       <Typography variant="h1">Cent Mille Milliards de Poèmes</Typography>
