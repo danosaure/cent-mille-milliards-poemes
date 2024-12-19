@@ -1,1 +1,2 @@
-export const randomizeIndices = (strings: string[][]): number[] => strings.map((arr) => Math.floor(Math.random() * arr.length));
+export const randomizeIndices = (strings: string[][]): number[] =>
+  strings.map((arr) => (arr.length ? Math.floor(Math.random() * arr.length) : -1));
